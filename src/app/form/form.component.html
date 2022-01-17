@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<hr>
+<form [formGroup]="perfil">
+     <po-input p-label="Nome" p-required="true" formControlName="nome">
+     </po-input>
+
+     <po-input p-label="Sobrenome" p-required="true" formControlName="sobrenome">
+     </po-input>
+
+     <po-input p-label="Data de Nascimento" p-placeholder="dd/MM/yyyy" p-mask="dd/MM/yyyy" p-required="true"
+          formControlName="dataNascimento">
+     </po-input>
+
+     <po-input p-label="Nome da Mãe" p-required="true" formControlName="nomeMae">
+     </po-input>
+</form>
+
+<button pButton type="button" label="Obter Data!" icon="pi pi-check" (click)="obterData()"
+     [disabled]="!isFormValid()"></button>
+
+<hr>
+
+<h3>
+     Return from JSON 🎫
+</h3>
+
+<pre>
+     {{data | json}}
+</pre>
